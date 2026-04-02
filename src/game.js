@@ -8,7 +8,7 @@ const WIDTH = canvas.width;
 const HEIGHT = canvas.height;
 const GROUND_Y = 438;
 const GRAVITY = 2100;
-const JUMP_VELOCITY = -760;
+const JUMP_VELOCITY = -835;
 const BASE_SPEED = 340;
 
 const assetPaths = {
@@ -206,8 +206,8 @@ function startGame(assets) {
         kind: "pipe",
         width: 120,
         height: 148,
-        y: GROUND_Y - 148,
-        hitbox: { x: 18, y: 14, width: 72, height: 130 },
+        y: GROUND_Y - 128,
+        hitbox: { x: 18, y: 14, width: 72, height: 110 },
       },
     ];
 
