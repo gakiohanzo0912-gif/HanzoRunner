@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>走れ半蔵。</title>
+  <meta name="description" content="Hashire Hanzo browser runner game">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="page-shell">
+    <section class="game-card">
+      <header class="title-block">
+        <p class="eyebrow">Retro Browser Game</p>
+        <h1>走れ半蔵。</h1>
+        <p class="subtitle">Tap or press Space to jump, dodge obstacles, and chase a new hi-score.</p>
+      </header>
+
+      <div class="game-wrap">
+        <canvas id="game" width="960" height="540" aria-label="Shiba Runner game canvas"></canvas>
+      </div>
+
+      <footer class="tips">
+        <span>Controls: Tap / Click / Space / W / Up</span>
+        <span>Deploy: Static site ready for GitHub Pages</span>
+      </footer>
+    </section>
+  </main>
+
+  <script src="./src/game.js"></script>
+</body>
+</html>
