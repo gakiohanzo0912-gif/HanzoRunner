@@ -1,0 +1,142 @@
+:root {
+  --bg-top: #07111f;
+  --bg-mid: #04060f;
+  --bg-bottom: #010103;
+  --panel: rgba(6, 16, 30, 0.8);
+  --panel-border: rgba(121, 226, 255, 0.24);
+  --text-main: #f8fbff;
+  --text-soft: #b4d8ec;
+  --accent: #ffbf2f;
+  --accent-2: #6ff5f0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: "Trebuchet MS", "Verdana", sans-serif;
+  color: var(--text-main);
+  background:
+    radial-gradient(circle at top, rgba(27, 88, 141, 0.35), transparent 35%),
+    linear-gradient(180deg, var(--bg-top), var(--bg-mid) 45%, var(--bg-bottom));
+}
+
+body {
+  display: grid;
+  place-items: center;
+  overflow-x: hidden;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+body::before {
+  background:
+    linear-gradient(transparent 0, rgba(255, 255, 255, 0.03) 50%, transparent 100%);
+  background-size: 100% 8px;
+  opacity: 0.25;
+}
+
+body::after {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(111, 245, 240, 0.07), transparent 18%),
+    radial-gradient(circle at 80% 10%, rgba(255, 198, 61, 0.08), transparent 20%),
+    radial-gradient(circle at 50% 90%, rgba(20, 140, 255, 0.08), transparent 18%);
+}
+
+.page-shell {
+  width: min(1100px, 100%);
+  padding: 24px;
+}
+
+.game-card {
+  padding: 24px;
+  border: 1px solid var(--panel-border);
+  border-radius: 28px;
+  background: var(--panel);
+  box-shadow:
+    0 20px 70px rgba(0, 0, 0, 0.4),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+}
+
+.title-block {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  font-size: 0.78rem;
+}
+
+.title-block h1 {
+  margin: 0;
+  font-size: clamp(2.3rem, 4vw, 4.4rem);
+  line-height: 0.95;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  text-shadow:
+    0 2px 0 #7a4300,
+    0 4px 0 #5f2d00,
+    0 0 24px rgba(255, 191, 47, 0.28);
+}
+
+.subtitle {
+  margin: 14px auto 0;
+  max-width: 54ch;
+  color: var(--text-soft);
+  line-height: 1.6;
+}
+
+.game-wrap {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #000;
+}
+
+#game {
+  display: block;
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+}
+
+.tips {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+  color: var(--text-soft);
+  font-size: 0.92rem;
+}
+
+@media (max-width: 720px) {
+  .page-shell {
+    padding: 14px;
+  }
+
+  .game-card {
+    padding: 16px;
+    border-radius: 20px;
+  }
+
+  .tips {
+    font-size: 0.84rem;
+  }
+}
